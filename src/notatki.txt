@@ -1,0 +1,71 @@
+  /* DefaultTableModel defaultTableModel2 = new DefaultTableModel();
+        JTable jTable2 = new JTable(defaultTableModel2);
+        defaultTableModel2.addColumn("loumna 1");
+        defaultTableModel2.addColumn("loumna 2");
+        defaultTableModel2.addColumn("loumna 3");
+
+
+
+        for (int i = 0; i <Garaz.getListaDostepnychAut().size() ; i++) {
+            defaultTableModel2.addRow(Garaz.getListaDostepnychAut().toArray());
+
+        }
+      *//*  defaultTableModel2.addRow(new Object[]{"r1"});
+        defaultTableModel2.addRow(new Object[]{"r2"});
+        defaultTableModel2.addRow(new Object[]{"r3"});*//*
+
+        Vector data = defaultTableModel2.getDataVector();
+        Vector row = (Vector) data.elementAt(1);
+
+        int mColIndex = 0;
+        List colData = new ArrayList(jTable2.getRowCount());
+        for (int i = 0; i < jTable2.getRowCount(); i++) {
+            row = (Vector) data.elementAt(i);
+            colData.add(row.get(mColIndex));
+            add(new JScrollPane(jTable2));
+
+
+*/
+
+       /* String[] nazwaKolumn = {"pierwsza  imie",
+                "druga kolumna wiek",
+                "trzecia koluna zy cos"};
+
+
+        Object[][] danetabeli = {
+                {"Dawid", new Integer(32), new Boolean(true)},
+                {"Ania", new Integer(26), new Boolean(true)},
+                {"Maja", new Integer(18), new Boolean(true)}
+
+        };
+        JTable jTable = new JTable(danetabeli, nazwaKolumn);
+        //     System.out.println(jTable.getColumnName(0));
+
+        JScrollPane scrollPane = new JScrollPane(jTable);
+        jTable.setFillsViewportHeight(true);
+        add(scrollPane);*/
+            System.out.println("sos");
+
+
+      //  tekst.append(jTable.getValueAt(jTable.getSelectedRow(), 0).toString());
+                // infoAutoMarka.setText(table3.getValueAt(table3.getSelectedRow(), 0).toString());
+                //infoAutoMarka.setText(UserMethods.wezKlienta().toString());
+                // infoAutoMarka.setText(infoOAucie);
+
+
+
+
+                int watosc = Integer.parseInt(table3.getValueAt(table3.getSelectedRow(), 3).toString());
+
+                infoAutoMarka.setText(Garaz.getListaWszystkichAut().get(watosc).getNazwaAuta());
+                infoAutoSilnik.setText(String.valueOf(Garaz.getListaWszystkichAut().get(watosc).getCenaAuta()));
+                infoAutoKolor.setText(String.valueOf(Garaz.getListaWszystkichAut().get(watosc).isCzyDostepneAuto()));
+
+
+                 if(Garaz.getListaWszystkichAut().get(watosc).isCzyDostepneAuto()==true)
+
+                                { GUIInformacjeAuto.infoAutoCzyDostepne.setText("DOSTĘPNE");
+                                GUIInformacjeAuto.infoAutoCzyDostepne.setForeground(Color.GREEN);}
+                                else if(Garaz.getListaWszystkichAut().get(watosc).isCzyDostepneAuto()==false)
+                                { GUIInformacjeAuto.infoAutoCzyDostepne.setText("NIEDOSTĘPNE");
+                                    GUIInformacjeAuto.infoAutoCzyDostepne.setForeground(Color.red);}
