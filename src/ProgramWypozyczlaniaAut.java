@@ -3,11 +3,11 @@ import javax.swing.*;
 public class ProgramWypozyczlaniaAut extends JFrame {
 
 
-    ProgramWypozyczlaniaAut(Klient klientProg) {
+    ProgramWypozyczlaniaAut() {
       setSize(600,300);
         setTitle("Wypozyczalnia");
         setLocationRelativeTo(null);
-        add(new GUITło(klientProg));
+        add(new GUITło());
         pack();
         setDefaultCloseOperation(3);
         setVisible(false);
@@ -18,7 +18,8 @@ public class ProgramWypozyczlaniaAut extends JFrame {
     public static void main(String[] args) {
         new Garaz();
         UserMethods.wypozycz(Garaz.getListaKlientow().get(0), Garaz.getListaDostepnychAut().get(0), 8);
-        new ProgramWypozyczlaniaAut(UserMethods.wezKlienta());
+      //  UserMethods.dodajAuto(33,"ddd",55);
+        new ProgramWypozyczlaniaAut();
         new GUILogowanie();
 
 

@@ -5,11 +5,11 @@ import java.awt.event.ActionListener;
 
 public class GUITło extends JPanel  {
     GUIWyborDzialania wyborDzialania=new GUIWyborDzialania();
-    GUIListaAutDostepnych listaAutDostepnych=new GUIListaAutDostepnych();
+public static     GUIListaAutDostepnych listaAutDostepnych=new GUIListaAutDostepnych();
     GUIInformacjeAuto informacjeAuto=new GUIInformacjeAuto();
     GUIKlienci klienci=new GUIKlienci();
 
-    GUITło(Klient tło){
+    GUITło( ){
 
 
         setLayout(new BorderLayout());

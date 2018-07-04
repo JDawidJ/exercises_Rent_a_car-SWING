@@ -14,7 +14,6 @@ public class GUIKlienci extends JPanel {
     GUIKlienci() {
         add(dodajKlient);
         add(usunKlienta);
-
         List<String> columns = new ArrayList<String>();
         List<String[]> values = new ArrayList<String[]>();
 

@@ -49,7 +49,7 @@ Klient klient=new Klient();
                 if (userName.equals("a") && myPassword.equals("a")){
 
 frame.setVisible(false);
-                    new ProgramWypozyczlaniaAut(UserMethods.wezKlienta()).setVisible(true);
+                    new ProgramWypozyczlaniaAut().setVisible(true);
                     System.out.println("SUPER");}
 
                 else {

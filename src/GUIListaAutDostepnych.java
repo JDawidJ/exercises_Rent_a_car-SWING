@@ -6,12 +6,16 @@ import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class GUIListaAutDostepnych extends JPanel {
+public class GUIListaAutDostepnych extends JPanel  {
 JTable tabelaAut =new JTable();
+    JButton przyciskDodajAuto =new JButton("Dodaj");
+    JButton przyciskUsunAuto =new JButton("Usun");
+  public static   TableModel tableModel;
 
 
     GUIListaAutDostepnych() {
-
+        add(przyciskDodajAuto);
+      add(przyciskUsunAuto);
         List<String> columns = new ArrayList<String>();
         List<String[]> values = new ArrayList<String[]>();
 
@@ -20,20 +24,24 @@ JTable tabelaAut =new JTable();
         columns.add("Ceana");
      columns.add("CzyDostepne");
         columns.add("ID");
-
+try{
 
         for (int i = 0; i < Garaz.getListaWszystkichAut().size(); i++) {
             values.add(new String[]{Garaz.getListaWszystkichAut().get(i).getSpecyfikacja().getMarka(),
                     Garaz.getListaWszystkichAut().get(i).getSpecyfikacja().getModel(),
                     String.valueOf(Garaz.getListaWszystkichAut().get(i).getCenaAuta()),
-                   String.valueOf(Garaz.getListaWszystkichAut().get(i).isCzyDostepneAuto()),
+                    String.valueOf(Garaz.getListaWszystkichAut().get(i).isCzyDostepneAuto()),
                     String.valueOf(Garaz.getListaWszystkichAut().get(i).getIDauta()),
 
             });
-
-
         }
-        TableModel tableModel = new DefaultTableModel(values.toArray(new Object[][]{}), columns.toArray());
+
+
+        }catch (NullPointerException ex)
+{
+    ex.getMessage();
+}
+        tableModel = new DefaultTableModel(values.toArray(new Object[][]{}), columns.toArray());
          tabelaAut = new JTable(tableModel);
         add(new JScrollPane(tabelaAut), BorderLayout.CENTER);
 
@@ -61,7 +69,12 @@ JTable tabelaAut =new JTable();
 
             }
         });
-
+przyciskDodajAuto.addActionListener(new ActionListener() {
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        new GUIDodajAuto();
+    }
+});
 GUIInformacjeAuto.wypożycz.addActionListener(new ActionListener() {
     @Override
     public void actionPerformed(ActionEvent e) {

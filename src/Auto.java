@@ -17,6 +17,12 @@ public class Auto {
         this.czyDostepneAuto = czyDostepneAuto;
     }
 
+    public Auto(int IDauta, String nazwaAuta, int cenaAuta) {
+        this.IDauta = IDauta;
+        this.nazwaAuta = nazwaAuta;
+        this.cenaAuta = cenaAuta;
+    }
+
     @Override
     public String toString() {
         return nazwaAuta+" \n"+

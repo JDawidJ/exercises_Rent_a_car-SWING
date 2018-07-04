@@ -41,7 +41,11 @@ public class UserMethods {
         return Garaz.getListaKlientow().get(0);
     }
 
+public static void dodajAuto(int idAuta,String nazwaAuta,int cenaAuta){
+        Garaz.getListaWszystkichAut().add(new Auto(idAuta,nazwaAuta,cenaAuta));
+        Garaz.getListaDostepnychAut().add(new Auto(idAuta,nazwaAuta,cenaAuta));
 
+}
 
 
 
